@@ -17,4 +17,8 @@ export class DeezerMusicApiService {
   getDetailsOfMusic(IdAlbum:string){
     return this.httpClienteModule.get(this.url_api + "album/" + IdAlbum);
   }
+
+  getInfoOfArtist(idArtista:string){
+    return this.httpClienteModule.get(this.url_api + "artist/" + idArtista);
+  }
 }

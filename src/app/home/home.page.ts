@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DeezerMusicApiService } from '../services/deezer-music-api.service';
+import { Router } from '@angular/router';
 
 
 
@@ -10,11 +11,12 @@ import { DeezerMusicApiService } from '../services/deezer-music-api.service';
 })
 export class HomePage {
 
-  constructor(private deezerMusicApiService:DeezerMusicApiService) {}
+  constructor(private deezerMusicApiService:DeezerMusicApiService, private router:Router) {}
 
   musicas:any;
   isModalOpen = false;
   DetailsMusic:any;
+  InfoArtist:any;
 
   public ngOnInit():void{
     this.getMusicForArtist("Shakira");
@@ -40,6 +42,17 @@ export class HomePage {
     this.deezerMusicApiService.getDetailsOfMusic(idAlbum).subscribe({
       next: (s) =>{
         this.DetailsMusic = s;
+      },
+      error: (err) =>{
+        console.error(err);
+      }
+    })
+  }
+
+  getInfoArtist(idArtist:string){
+    this.deezerMusicApiService.getInfoOfArtist(idArtist).subscribe({
+      next: (s) =>{
+        this.InfoArtist = s;
       },
       error: (err) =>{
         console.error(err);
