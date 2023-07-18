@@ -6,7 +6,7 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <ion-title>
-        Información del Artista
+        Generos Disponibles
       </ion-title>
     </ion-toolbar>
   </ion-header>
@@ -18,16 +18,33 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
+
+      <a href="">
+        <ion-icon name="search-outline">
+        </ion-icon> <label  style="position:relative; left: 20px;" for="">Canciones</label>
+      </a>
+
+      <br> <br>
+
       <a href="/info-autor">
-        <ion-icon  name="person-outline"></ion-icon><label  style="position:relative; left: 20px;" for="">Información del Artista</label>
+        <ion-icon name="musical-note-outline">
+        </ion-icon> <label  style="position:relative; left: 20px;" for="">Generos</label>
       </a>
 
     </ion-content>
   </ion-menu>
 
   <ion-content [fullscreen]="true" id="main-content">
-
-
+    <ion-grid>
+      <ion-row *ngFor="let item of generos.data">
+        <ion-col size="6">
+          <ion-label style="font-weight: 900;position: relative; top: 80px;" color="danger">{{item.name}}</ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-img src="{{item.picture_medium}}"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
   
 

@@ -18,8 +18,17 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
+
+      <a href="">
+        <ion-icon name="search-outline">
+        </ion-icon> <label  style="position:relative; left: 20px;" for="">Canciones</label>
+      </a>
+
+      <br> <br>
+
       <a href="/info-autor">
-        <ion-icon  name="person-outline"></ion-icon><label  style="position:relative; left: 20px;" for="">Información del Artista</label>
+        <ion-icon name="musical-note-outline">
+        </ion-icon> <label  style="position:relative; left: 20px;" for="">Generos</label>
       </a>
 
     </ion-content>
@@ -67,8 +76,8 @@
 
           <ion-label class="name">{{InfoArtist.name}}</ion-label>
           <ion-img src="{{InfoArtist.picture_medium}}"></ion-img>
-          <ion-label class="name"># Albúm: {{InfoArtist.nb_album}}</ion-label>
-          <ion-label class="name"># Fans: {{InfoArtist.nb_fan}}</ion-label>
+          <ion-label color="tertiary" class="name perso"># Albúm: {{InfoArtist.nb_album}}</ion-label> <br>
+          <ion-label color="tertiary" class="name perso"># Fans: {{InfoArtist.nb_fan}}</ion-label>
 
         </ion-content>
       </ng-template>
